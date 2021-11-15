@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "1cff4238-1240-4144-8a5a-8be0d6b73325",
+		"name": "Assign Mentors API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Home Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assign-mentor-host}}/",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a mentor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"mentorID\": 6,\n    \"mentorName\": \"Suhasini\"\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{assign-mentor-host}}/mentors",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"mentors"
+					]
+				},
+				"description": "Create a mentor:\n```\n[\n{\n    \"mentorID\": number,\n    \"mentorName\": \"string\"\n}\n]\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n    \"studentID\": 10,\n    \"studentName\": \"Pallavi\",\n    \"mentorID\": \"\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{assign-mentor-host}}/students",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"students"
+					]
+				},
+				"description": "Create a student:\n```\n[\n    {\n    \"studentID\": number,\n    \"studentName\": \"string\",\n    \"mentorID\": \"string\"\n    }\n]\n```"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all mentors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assign-mentor-host}}/mentors",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"mentors"
+					]
+				},
+				"description": "Get all mentors:"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assign-mentor-host}}/students",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"students"
+					]
+				},
+				"description": "Get all students"
+			},
+			"response": []
+		},
+		{
+			"name": "Get students with no mentors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assign-mentor-host}}/students/free",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"students",
+						"free"
+					]
+				},
+				"description": "Get students with no mentors"
+			},
+			"response": []
+		},
+		{
+			"name": "Get student by Mentor ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{assign-mentor-host}}/mentors/5",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"mentors",
+						"5"
+					]
+				},
+				"description": "Get student by Mentor ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Get student by ID and change mentor",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{assign-mentor-host}}/students/9/5",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"students",
+						"9",
+						"5"
+					]
+				},
+				"description": "Get student by ID and change mentor"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete student by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{assign-mentor-host}}/students/10",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"students",
+						"10"
+					]
+				},
+				"description": "Delete student by ID"
+			},
+			"response": []
+		},
+		{
+			"name": "select one mentor and add multiple students",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"studentID\": 10,\n        \"studentName\": \"Mallikarjuna M\",\n        \"mentorID\": \"\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{assign-mentor-host}}/mentors/5",
+					"host": [
+						"{{assign-mentor-host}}"
+					],
+					"path": [
+						"mentors",
+						"5"
+					]
+				},
+				"description": "select one mentor and add multiple students:\n```\n[\n    {\n        \"studentID\": number,\n        \"studentName\": \"string\",\n        \"mentorID\": \"\"\n    }\n]\n```"
+			},
+			"response": []
+		}
+	]
+}
